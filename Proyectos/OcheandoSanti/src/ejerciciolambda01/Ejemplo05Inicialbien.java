@@ -16,7 +16,7 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
-import com.sun.tools.javac.util.Position;
+//import com.sun.tools.javac.util.Position;
 
 public class Ejemplo05Inicialbien extends JFrame {
 	/*
