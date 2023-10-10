@@ -5,10 +5,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-public class Apuesta {
+public class Apuesta { 
 	private Set<Bola> bolasRojas;
 	private Bola bolaAzul;
-	private static final Integer NUMERO_BOLAS_ROJAS = 5;
+	private static final Integer NUMERO_BOLAS_ROJAS = 6;
 
 	public Apuesta(Set<Bola> bolasRojas, Bola bolaAzul) {
 		//PREGUNTA --> TERNARIOS SI? o TERNARIOS NO?
@@ -16,7 +16,9 @@ public class Apuesta {
 		this.bolasRojas = (this.bolaAzul != null && bolasRojas.size() == NUMERO_BOLAS_ROJAS) ? bolasRojas : null;
 	
 	}
-
+/*
+ * bolaAzul:[ 1 , 2 ,3 ,4 ,5 ] Apuesta
+ */
 	public Map<Bola, Set<Bola>> getApuesta() {
 		Map<Bola, Set<Bola>> apuestaDict = new HashMap<>();
 		apuestaDict.put(bolaAzul, bolasRojas);
@@ -39,7 +41,9 @@ public class Apuesta {
 		return bolaAzul.getNumero();
 	}
 	
-	
+	public Boolean containsValue(Integer value) {
+		return this.bolasRojas.contains(new Bola(value, ColorBola.ROJO));
+	}
 
 
 }

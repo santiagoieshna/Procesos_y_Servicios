@@ -9,6 +9,14 @@ public class Sorteo {
 		this.bolaAzul = new Bola(ColorBola.AZUL);
 		this.bolaRoja = new Bola(ColorBola.ROJO);
 	}
+	/**
+	 * Metodo para @tests
+	 * @return
+	 */
+	public void setSorteo(Integer rojo, Integer azul) {
+		this.bolaRoja = new Bola(rojo ,ColorBola.ROJO);
+		this.bolaAzul = new Bola(azul ,ColorBola.AZUL);
+	}
 
 	public Bola getBolaAzul() {
 		return bolaAzul;

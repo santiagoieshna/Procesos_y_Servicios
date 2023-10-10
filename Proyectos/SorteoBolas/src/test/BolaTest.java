@@ -71,11 +71,11 @@ class BolaTest {
 		assertNull(numeroActual);
 		
 		//VARIOS CASOS
-		Integer[] numeros = {-1, 0, 1, 6, 12, 33, 34, 36};
+		Integer[] numeros = {-1, 0, 1, 6, 16, 33, 34, 36};
 		
 		//CASOS en ROJO
 		//Expected Value
-		Integer[] numerosExpectedRojo = {null, null, 1, 6, 12, 33, null, null};
+		Integer[] numerosExpectedRojo = {null, null, 1, 6, 16, 33, null, null};
 		//Actual Value
 		Integer[] numerosActualRojo = new Integer[numeros.length];
 		
@@ -87,7 +87,7 @@ class BolaTest {
 		
 		//CASOS en AZUL
 		//Expected Value
-		Integer[] numerosExpectedAzul = {null, null, 1, 6, 12, null, null, null};
+		Integer[] numerosExpectedAzul = {null, null, 1, 6, 16, null, null, null};
 		//Actual Value
 		Integer[] numerosActualAzul = new Integer[numeros.length];
 		

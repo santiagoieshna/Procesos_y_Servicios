@@ -1,7 +1,7 @@
 package model.data;
 
 public enum ColorBola {
-	AZUL(12), ROJO(33);
+	AZUL(16), ROJO(33);
 	
 	private Integer rango;
 	
