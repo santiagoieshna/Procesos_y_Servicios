@@ -1,9 +1,10 @@
-package controller;
+package test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
+import controller.Controler;
 import model.data.Apuesta;
 import model.data.Sorteo;
 import model.mucks.ApuestaOM;
@@ -17,11 +18,16 @@ class ControlerTest {
 		Sorteo sorteo = SorteoOM.setValues(1, 4);
 		Apuesta apuesta = ApuestaOM.getSample1(4);
 		Controler juego = new Controler(apuesta, sorteo);
+		final Integer  NUMERO_UNO = 1;
+		final Integer  NUMERO_CUATRO = 4;
+		final Integer  NUMERO_TRES = 3;
+		final Integer  NUMERO_TRENTAYUNO = 31;
 		
-		assertEquals(1, sorteo.getNumeroRojo());
-		assertEquals(4, sorteo.getNumeroAzul());
 		
-		assertEquals(4, apuesta.getNumeroAzul());
+		assertEquals(NUMERO_UNO, sorteo.getNumeroRojo());
+		assertEquals(NUMERO_CUATRO, sorteo.getNumeroAzul());
+		
+		assertEquals(NUMERO_CUATRO, apuesta.getNumeroAzul());
 		assertTrue(apuesta.containsValue(1));
 		
 		assertTrue(juego.comprobarGanadorSimple());
@@ -30,10 +36,10 @@ class ControlerTest {
 		sorteo = SorteoOM.setValues(1, 3);
 		juego = new Controler(apuesta, sorteo);
 		
-		assertEquals(1, sorteo.getNumeroRojo());
-		assertEquals(3, sorteo.getNumeroAzul());
+		assertEquals(NUMERO_UNO, sorteo.getNumeroRojo());
+		assertEquals(NUMERO_TRES, sorteo.getNumeroAzul());
 		
-		assertEquals(4, apuesta.getNumeroAzul());
+		assertEquals(NUMERO_CUATRO, apuesta.getNumeroAzul());
 		assertTrue(apuesta.containsValue(1));
 		
 		assertFalse(juego.comprobarGanadorSimple());
@@ -42,10 +48,10 @@ class ControlerTest {
 		sorteo = SorteoOM.setValues(31, 4);
 		juego = new Controler(apuesta, sorteo);
 		
-		assertEquals(31, sorteo.getNumeroRojo());
-		assertEquals(4, sorteo.getNumeroAzul());
+		assertEquals(NUMERO_TRENTAYUNO, sorteo.getNumeroRojo());
+		assertEquals(NUMERO_CUATRO, sorteo.getNumeroAzul());
 		
-		assertEquals(4, apuesta.getNumeroAzul());
+		assertEquals(NUMERO_CUATRO, apuesta.getNumeroAzul());
 		assertFalse(apuesta.containsValue(31));
 		
 		assertFalse(juego.comprobarGanadorSimple());
